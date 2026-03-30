@@ -1,15 +1,22 @@
-import { Geist, Geist_Mono } from "next/font/google"
+import { Inter, IBM_Plex_Serif as IBMPlexSerif } from "next/font/google"
 
 import "./globals.css"
 import { cn } from "../lib/utils";
 import { ThemeProvider } from "next-themes";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'})
+const geist = Inter({subsets:['latin'],variable:'--font-inter'})
 
-const fontMono = Geist_Mono({
+const ibmPlexSerif = IBMPlexSerif({
   subsets: ["latin"],
-  variable: "--font-mono",
-})
+  weight: ["400","700"],
+  variable: '--font-ibm-plex-serif'
+  })
+
+export const metadata = {
+  title: "Bank Finance Dashboard",
+  description: "A dashboard to track your bank finances.",
+  icons: "./icons/logo.svg",
+};
 
 export default function RootLayout({
   children,
@@ -20,10 +27,10 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", geist.variable)}
+      className={cn("antialiased", ibmPlexSerif.variable, "font-sans", geist.variable)}
     >
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        {children}
       </body>
     </html>
   )
