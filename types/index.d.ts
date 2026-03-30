@@ -9,6 +9,12 @@ declare type SearchParamProps = {
 
 // ========================================
 
+declare type MenuLinkProps = {
+  imgURL: string;
+  route: string,
+  label: string,
+}
+
 declare type SignUpParams = {
   firstName: string;
   lastName: string;
@@ -216,7 +222,7 @@ declare interface FooterProps {
 declare interface RightSidebarProps {
   user: User;
   transactions: Transaction[];
-  banks: Bank[] & Account[];
+  banks?: Bank[] & Account[];
 }
 
 declare interface SiderbarProps {

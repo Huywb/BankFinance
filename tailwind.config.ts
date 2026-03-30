@@ -8,7 +8,7 @@ const config = {
     "./src/**/*.{ts,tsx}",
     "./constants/**/*.{ts,tsx}",
   ],
-  darkMode: ["class", ".dark"],
+  darkMode: ["class", ".white"],
   prefix: "",
   theme: {
     container: {
